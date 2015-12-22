@@ -214,7 +214,7 @@ describe Referencia do
                 titulo "Prueba de Ruby"
             end
         end
-        it "Comprobar que se pueden añadir los atributos de una Revista" do
+        it "Comprobar que se pueden añadir los atributos de un Libro" do
             lib = DslBibliografia.new("Prueba libro","2015") do
                 autor   :apellido => "sanchez",
                         :nombre => "orlandy"
@@ -224,6 +224,16 @@ describe Referencia do
                         :isbn => "ISBN-1123123",
                         :editorial => "sanchez s.l"
                 titulo "Libro de pruebas"
+            end
+        end
+        it "Comprobar que se pueden añadir los atributos de un Periodico" do
+            ped = DslBibliografia.new("Periodico X","2000") do
+                    autor       :apellido => "sanchez",
+                                :nombre => "orlandy"
+                    periodico   :nombre_periodico => "el dia",
+                                :volumen =>"4",
+                                :paginas => "10"
+                    titulo "Noticia"
             end
         end
     end

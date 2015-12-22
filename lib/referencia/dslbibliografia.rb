@@ -85,7 +85,14 @@ class DslBibliografia
     m_revista<<revista
   end
   
-
+  #Definición de los atributos propios de un Periodico
+  def periodico(arg,options={})
+    periodico= arg
+    periodico << "#{options[:nombre_periodico]}" if options[:nombre_periodico]
+    periodico << "#{options[:volumen]}" if options[:volumen]
+    periodico << "#{options[:paginas]}" if options[:paginas]
+    m_periodico<<periodico
+  end
   
   #Definición del titulo
   def titulo(a_titulo)
