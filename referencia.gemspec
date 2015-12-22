@@ -4,19 +4,19 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'referencia/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "referencia"
+  spec.name          = "referencia-cita-prct11"
   spec.version       = Referencia::VERSION
   spec.authors       = ["Orlandy Ariel"]
   spec.email         = ["alu0100773408@ull.edu.es"]
 
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = ""
+   # spec.metadata['allowed_push_host'] = ""
   end
 
-  spec.summary       = %q{}
-  spec.description   = %q{}
+  spec.summary       = %q{"Referencia Blibliografica"}
+  spec.description   = %q{"Referencia Blibliografica"}
   spec.homepage      =""
-  spec.license       = ""
+  spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
