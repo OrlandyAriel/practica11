@@ -201,7 +201,7 @@ describe Referencia do
     end
     context "## DSL ##" do
         it "Comprobar que existe una clase DslBibliografia" do 
-            dsl = DslBibliografia.new
+            dsl = DslBibliografia.new("Prueba","2015")
         end
     end
 end
