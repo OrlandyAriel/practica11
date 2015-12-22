@@ -214,5 +214,17 @@ describe Referencia do
                 titulo "Prueba de Ruby"
             end
         end
+        it "Comprobar que se pueden añadir los atributos de una Revista" do
+            lib = DslBibliografia.new("Prueba libro","2015") do
+                autor   :apellido => "sanchez",
+                        :nombre => "orlandy"
+                libro   :edicion => "Segunda",
+                        :volumen => "5",
+                        :lugar => "tenefife",
+                        :isbn => "ISBN-1123123",
+                        :editorial => "sanchez s.l"
+                titulo "Libro de pruebas"
+            end
+        end
     end
 end

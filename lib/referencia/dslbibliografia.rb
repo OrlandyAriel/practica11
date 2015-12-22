@@ -63,7 +63,17 @@ class DslBibliografia
     m_autor << autor
   end
   
- 
+  #Definicion de los atributos propios de un Libro
+  def libro(arg,options={})
+    libro= arg
+    libro << "#{options[:edicion]}" if options[:edicion]
+    libro << "#{options[:volumen]} " if options[:volumen]
+    libro << "#{options[:lugar]}" if options[:lugar]
+    libro << "#{options[:isbn]}" if options[:isbn]
+    libro << "#{options[:editorial]}" if options[:editorial]
+    m_libro<<libro
+    
+  end
   
   #Definición de los atributos propios de una Revista
   def revista(arg,options={})
@@ -75,7 +85,7 @@ class DslBibliografia
     m_revista<<revista
   end
   
- 
+
   
   #Definición del titulo
   def titulo(a_titulo)
