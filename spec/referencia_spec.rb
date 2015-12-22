@@ -199,4 +199,9 @@ describe Referencia do
             expect(@cita.respond_to?(:mostrar)).to eq(true)
         end
     end
+    context "## DSL ##" do
+        it "Comprobar que existe una clase DslBibliografia" do 
+            dsl = DslBibliografia.new
+        end
+    end
 end
