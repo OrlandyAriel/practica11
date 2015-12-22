@@ -6,7 +6,8 @@ require "referencia/doc_electronico"
 require "referencia/periodico"
 require "referencia/lista"
 require "referencia/cita_bibliograficas"
-require "referencia/dslbibliografia.rb"
+require "referencia/dslbibliografia"
+require "referencia/listahija"
 module Referencia
   # Your code goes here...
 end

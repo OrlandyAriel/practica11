@@ -200,6 +200,45 @@ describe Referencia do
         end
     end
     context "## DSL ##" do
+        before :each do
+            @revi=DslBibliografia.new("Prueba ","199") do
+                autor   :apellido => "Sanchez",
+                        :nombre => "Orlandy"
+                revista :nombre_revista => "ruby",
+                        :volumen => "1",
+                        :numero => "5",
+                        :paginas => "10"
+                titulo "Prueba de Ruby"
+            end
+            @libr =DslBibliografia.new("Prueba libro","2015") do
+                autor   :apellido => "sanchez",
+                        :nombre => "orlandy"
+                libro   :edicion => "Segunda",
+                        :volumen => "5",
+                        :lugar => "tenefife",
+                        :isbn => "ISBN-1123123",
+                        :editorial => "sanchez s.l"
+                titulo "Libro de pruebas"
+            end
+            @peri =DslBibliografia.new("Periodico X","2000") do
+                    autor       :apellido => "sanchez",
+                                :nombre => "orlandy"
+                    periodico   :nombre_periodico => "el dia",
+                                :volumen =>"4",
+                                :paginas => "10"
+                    titulo "Noticia"
+            end
+            @docElec =DslBibliografia.new("Doc Digital", "2015") do
+                autor :apellido => "sanchez",
+                      :nombre => "orlandy"
+                documentoElectronico :edicion => "Uno",
+                                    :tipo_de_medio => "Digital",
+                                    :editor => "Pepe Perez",
+                                    :url => "www.ull.periodico.es",
+                                    :fecha_de_acceso => "21/12/2015"
+                titulo "Ruby Digital"
+            end
+        end
         it "Comprobar que existe una clase DslBibliografia" do 
             dsl = DslBibliografia.new("Prueba","2015")
         end
@@ -247,6 +286,10 @@ describe Referencia do
                                     :fecha_de_acceso => "21/12/2015"
                 titulo "Ruby Digital"
             end
+        end
+        it "Comprobar que se puede crear una lista Con las referencias" do 
+            listah = ListaHija.new
+            listah.insertar_final(@libr,@revi,@peri,@docElec)
         end
     end
 end
