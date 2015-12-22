@@ -94,6 +94,17 @@ class DslBibliografia
     m_periodico<<periodico
   end
   
+  #Definicion de los atributos propios de un Documento Electronico
+  def documentoElectronico(arg,options={})
+    documentoElectronico =arg
+    documentoElectronico<< "#{options[:edicion]}" if options[:edicion]
+    documentoElectronico<< "#{options[:tipo_de_medio]}" if options[:tipo_de_medio]
+    documentoElectronico<< "#{options[:editor]}" if options[:editor]
+    documentoElectronico<< "#{options[:url]}" if options[:url]
+    documentoElectronico<< "#{options[:fecha_de_acceso]}" if options[:fecha_de_acceso]
+    m_doc_electronico<<documentoElectronico
+  end
+  
   #Definición del titulo
   def titulo(a_titulo)
     titulo = a_titulo

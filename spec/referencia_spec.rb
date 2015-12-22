@@ -236,5 +236,17 @@ describe Referencia do
                     titulo "Noticia"
             end
         end
+        it "Comprobar que se pueden añadir los atributos de un Documento Electronico" do
+            doc = DslBibliografia.new("Doc Digital", "2015") do
+                autor :apellido => "sanchez",
+                      :nombre => "orlandy"
+                documentoElectronico :edicion => "Uno",
+                                    :tipo_de_medio => "Digital",
+                                    :editor => "Pepe Perez",
+                                    :url => "www.ull.periodico.es",
+                                    :fecha_de_acceso => "21/12/2015"
+                titulo "Ruby Digital"
+            end
+        end
     end
 end
