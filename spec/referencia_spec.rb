@@ -203,5 +203,16 @@ describe Referencia do
         it "Comprobar que existe una clase DslBibliografia" do 
             dsl = DslBibliografia.new("Prueba","2015")
         end
+        it "Comprobar que se pueden añadir los atributos de una Revista" do
+            rev =DslBibliografia.new("Prueba ","199") do
+                autor   :apellido => "Sanchez",
+                        :nombre => "Orlandy"
+                revista :nombre_revista => "ruby",
+                        :volumen => "1",
+                        :numero => "5",
+                        :paginas => "10"
+                titulo "Prueba de Ruby"
+            end
+        end
     end
 end
